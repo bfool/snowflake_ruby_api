@@ -1,24 +1,19 @@
-# README
+## Example
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+- Dynamic DSN search
 
-* Ruby version
+```
+# With User and Pwd
+api/v1/snowflake/#{DSN}?UID=XXX&PWD=XXX&SQL=#{Base64}
 
-* System dependencies
 
-* Configuration
+# Without User and Pwd
+api/v1/snowflake/#{DSN}?SQL=#{Base64}
+```
 
-* Database creation
+- Search with driver connection
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+api/v1/snowflake?DRIVER=#{DriverPath}&SERVER=#{ServerAddress}&UID=#{User}&PWD=#{PWD}&SCHEMA=#{Schema}&DATABASE=#{DB}&SQL=#{SQL}
+```
